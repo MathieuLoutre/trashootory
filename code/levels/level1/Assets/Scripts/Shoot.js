@@ -17,6 +17,7 @@ function FixedUpdate ()
 					if(hit.rigidbody) 
 					{
 						rigid = hit.rigidbody;
+						rigid.useGravity = false;
 						rigid.MovePosition(transform.position + transform.forward * 1);
 					}
 				}
@@ -28,6 +29,7 @@ function FixedUpdate ()
 			
 			if (Input.GetButtonDown("Fire1")) 
 			{
+				rigid.useGravity = true;
 				rigid.AddForce(transform.forward * 2000);
 				rigid = null;
 			}
