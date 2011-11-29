@@ -29,7 +29,7 @@ function Update ()
 			if (pos_set) // object is set in the air
 			{
 				pellet.useGravity = true;
-				pellet.AddForce(start_pos + transform.forward * 2000);
+				pellet.AddForce((start_pos - transform.position) * 1000);
 				pellet = null;
 				pos_set = false;
 			}
