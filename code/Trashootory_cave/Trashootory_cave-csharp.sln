@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{07B06FBE-F196-331E-70A8-9372936F1E2B}") = "Trashootory_cave", "Assembly-CSharp-firstpass-vs.csproj", "{B8BEB429-0F8C-7437-2711-752EB3215C60}"
+EndProject
+Project("{07B06FBE-F196-331E-70A8-9372936F1E2B}") = "Trashootory_cave", "Assembly-CSharp-vs.csproj", "{C415C76B-24AE-5D0C-BFF9-4B232771916B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8BEB429-0F8C-7437-2711-752EB3215C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BEB429-0F8C-7437-2711-752EB3215C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8BEB429-0F8C-7437-2711-752EB3215C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8BEB429-0F8C-7437-2711-752EB3215C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C415C76B-24AE-5D0C-BFF9-4B232771916B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C415C76B-24AE-5D0C-BFF9-4B232771916B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C415C76B-24AE-5D0C-BFF9-4B232771916B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C415C76B-24AE-5D0C-BFF9-4B232771916B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	
+EndGlobal
