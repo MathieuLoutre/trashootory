@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{BC8DB347-C9F2-F279-80C8-2222851AC215}</ProjectGuid>
+	<ProjectGuid>{B006BEED-5545-CBAB-8EEA-7E78E9310B6E}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -45,8 +45,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GUI\Crosshair.js" />
-     <Compile Include="Assets\Scripts\DragRigidbody.js" />
-     <Compile Include="Assets\Scripts\Shoot.js" />
+     <Compile Include="Assets\Scripts\Catch.js" />
+     <Compile Include="Assets\Scripts\Fade.js" />
+     <Compile Include="Assets\Scripts\Win.js" />
+     <Compile Include="Assets\Scripts\texturescript.js" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
@@ -69,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{C2ACD8A1-FDFC-3CB2-830C-EE3B1B7C5193}</Project>
+      <Project>{B8BEB429-0F8C-7437-2711-752EB3215C60}</Project>
       <Name>Assembly-CSharp-firstpass-vs</Name>
     </ProjectReference>
   </ItemGroup>

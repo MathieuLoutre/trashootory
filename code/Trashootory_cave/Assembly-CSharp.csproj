@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{3A600B76-724A-D933-7F72-B854DF61A9E4}</ProjectGuid>
+	<ProjectGuid>{C415C76B-24AE-5D0C-BFF9-4B232771916B}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -44,9 +44,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MiddleVR\Scripts\VRApplySharedTransform.cs" />
      <Compile Include="Assets\MiddleVR\Scripts\VRAttachToNode.cs" />
      <Compile Include="Assets\MiddleVR\Scripts\VRManagerPostFrame.cs" />
      <Compile Include="Assets\MiddleVR\Scripts\VRManagerScript.cs" />
+     <Compile Include="Assets\MiddleVR\Scripts\VRShareTransform.cs" />
+     <Compile Include="Assets\Scripts\catcher.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
@@ -66,11 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{C2ACD8A1-FDFC-3CB2-830C-EE3B1B7C5193}</Project>
+      <Project>{B8BEB429-0F8C-7437-2711-752EB3215C60}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{E0B0E531-4D25-8534-3D11-1067F66D32BF}</Project>
+      <Project>{650BA5FB-E9CA-E561-EFE2-1E8AB35D592A}</Project>
       <Name>Assembly-UnityScript-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
