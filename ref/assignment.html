@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="http://moodle.ucl.ac.uk/theme/standard/styles.php" />
+<link rel="stylesheet" type="text/css" href="http://moodle.ucl.ac.uk/theme/ucl-new/styles.php" />
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://moodle.ucl.ac.uk/theme/ucl-new/styles_ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://moodle.ucl.ac.uk/theme/ucl-new/styles_ie6.css" />
+<![endif]-->
+
+
+    <meta name="keywords" content="moodle, COMPM076COMPGV07: Coursework 2: VE programming for the CAVE " />
+    <title>COMPM076COMPGV07: Coursework 2: VE programming for the CAVE</title>
+    <link rel="shortcut icon" href="http://moodle.ucl.ac.uk/theme/ucl-new/favicon.ico" />
+    <!--<style type="text/css">/*<![CDATA[*/ body{behavior:url(http://moodle.ucl.ac.uk/lib/csshover.htc);} /*]]>*/</style>-->
+
+<script type="text/javascript" src="http://moodle.ucl.ac.uk/lib/javascript-static.js"></script>
+<script type="text/javascript" src="http://moodle.ucl.ac.uk/lib/javascript-mod.php"></script>
+<script type="text/javascript" src="http://moodle.ucl.ac.uk/lib/overlib/overlib.js"></script>
+<script type="text/javascript" src="http://moodle.ucl.ac.uk/lib/overlib/overlib_cssstyle.js"></script>
+<script type="text/javascript" src="http://moodle.ucl.ac.uk/lib/cookies.js"></script>
+<script type="text/javascript" src="http://moodle.ucl.ac.uk/lib/ufo.js"></script>
+<script type="text/javascript" src="http://moodle.ucl.ac.uk/lib/dropdown.js"></script>  
+
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+setTimeout('fix_column_widths()', 20);
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function openpopup(url, name, options, fullscreen) {
+    var fullurl = "http://moodle.ucl.ac.uk" + url;
+    var windowobj = window.open(fullurl, name, options);
+    if (!windowobj) {
+        return true;
+    }
+    if (fullscreen) {
+        windowobj.moveTo(0, 0);
+        windowobj.resizeTo(screen.availWidth, screen.availHeight);
+    }
+    windowobj.focus();
+    return false;
+}
+
+function uncheckall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
+}
+
+function checkall() {
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = true;
+    }
+}
+
+function inserttext(text) {
+  text = ' ' + text + ' ';
+  if ( opener.document.forms['theform'].message.createTextRange && opener.document.forms['theform'].message.caretPos) {
+    var caretPos = opener.document.forms['theform'].message.caretPos;
+    caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? text + ' ' : text;
+  } else {
+    opener.document.forms['theform'].message.value  += text;
+  }
+  opener.document.forms['theform'].message.focus();
+}
+
+function getElementsByClassName(oElm, strTagName, oClassNames){
+	var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+	var arrReturnElements = new Array();
+	var arrRegExpClassNames = new Array();
+	if(typeof oClassNames == "object"){
+		for(var i=0; i<oClassNames.length; i++){
+			arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames[i].replace(/\-/g, "\\-") + "(\\s|$)"));
+		}
+	}
+	else{
+		arrRegExpClassNames.push(new RegExp("(^|\\s)" + oClassNames.replace(/\-/g, "\\-") + "(\\s|$)"));
+	}
+	var oElement;
+	var bMatchesAll;
+	for(var j=0; j<arrElements.length; j++){
+		oElement = arrElements[j];
+		bMatchesAll = true;
+		for(var k=0; k<arrRegExpClassNames.length; k++){
+			if(!arrRegExpClassNames[k].test(oElement.className)){
+				bMatchesAll = false;
+				break;
+			}
+		}
+		if(bMatchesAll){
+			arrReturnElements.push(oElement);
+		}
+	}
+	return (arrReturnElements)
+}
+//]]>
+</script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4551567-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body  class="mod-resource course-11551 dir-ltr lang-en_utf8" id="mod-resource-view">
+
+<div id="page">
+
+    <div id="header" class=" clearfix">        <h1 class="headermain">COMPM076COMPGV07:Virtual Environments</h1>
+        <div class="headermenu"><div class="navigation">
+<ul><li><form action="http://moodle.ucl.ac.uk/mod/resource/view.php"  onclick="this.target='_top';"><fieldset class="invisiblefieldset"><input type="hidden" name="id" value="427715" /><button type="submit" title="Previous activity"><span class="arrow ">&#x25C4;</span><span class="accesshide " >&nbsp;Previous activity</span></button></fieldset></form></li><li><form action="http://moodle.ucl.ac.uk/course/jumpto.php" method="get"  id="navmenupopup" class="popupform"><div><select id="navmenupopup_jump" name="jump" onchange="self.location=document.getElementById('navmenupopup').jump.options[document.getElementById('navmenupopup').jump.selectedIndex].value;">
+   <option value="http://moodle.ucl.ac.uk/mod/forum/view.php?id=420709" style="background-image: url(http://moodle.ucl.ac.uk/mod/forum/icon.gif);">News forum</option>
+   <option value="http://moodle.ucl.ac.uk/mod/resource/view.php?id=427603" style="background-image: url(http://moodle.ucl.ac.uk/mod/resource/icon.gif);">Course Summary, Aims, and Structure</option>
+   <option value="http://moodle.ucl.ac.uk/mod/resource/view.php?id=624687" style="background-image: url(http://moodle.ucl.ac.uk/mod/resource/icon.gif);">Notes, Materials and Schedules for Lectures, Semin...</option>
+   <option value="http://moodle.ucl.ac.uk/mod/resource/view.php?id=427715" style="background-image: url(http://moodle.ucl.ac.uk/mod/resource/icon.gif);">Coursework 1: Seminar</option>
+   <option value="http://moodle.ucl.ac.uk/mod/resource/view.php?id=427725" selected="selected" style="background-image: url(http://moodle.ucl.ac.uk/mod/resource/icon.gif);">Jump to...</option>
+   <option value="http://moodle.ucl.ac.uk/mod/resource/view.php?id=624669" style="background-image: url(http://moodle.ucl.ac.uk/mod/resource/icon.gif);">Lab Exercise</option>
+   <option value="http://moodle.ucl.ac.uk/mod/resource/view.php?id=427733" style="background-image: url(http://moodle.ucl.ac.uk/mod/resource/icon.gif);">Miscellaneous</option>
+</select><input type="hidden" name="sesskey" value="lxYAeE95T5" /><div id="noscriptnavmenupopup" style="display: inline;"><input type="submit" value="Go" /></div><script type="text/javascript">
+//<![CDATA[
+document.getElementById("noscriptnavmenupopup").style.display = "none";
+//]]>
+</script></div></form></li><li><form action="http://moodle.ucl.ac.uk/mod/resource/view.php"   onclick="this.target='_top';"><fieldset class="invisiblefieldset"><input type="hidden" name="id" value="624669" /><button type="submit" title="Next activity"><span class="accesshide " >Next activity&nbsp;</span><span class="arrow ">&#x25BA;</span></button></fieldset></form></li></ul>
+</div></div>
+    </div>    <div class="navbar clearfix">
+        <div class="breadcrumb"><h2 class="accesshide " >You are here</h2> <ul>
+<li class="first"><a  onclick="this.target='_top'" href="http://moodle.ucl.ac.uk/">UCLMoodle</a></li><li> <span class="accesshide " >/&nbsp;</span><span class="arrow sep">&#x25BA;</span> <a  onclick="this.target='_top'" href="http://moodle.ucl.ac.uk/course/view.php?id=11551">COMPM076COMPGV07</a></li><li> <span class="accesshide " >/&nbsp;</span><span class="arrow sep">&#x25BA;</span> <a  onclick="this.target='_top'" href="http://moodle.ucl.ac.uk/mod/resource/index.php?id=11551">Resources</a></li><li> <span class="accesshide " >/&nbsp;</span><span class="arrow sep">&#x25BA;</span> Coursework 2: VE programming for the CAVE</li></ul></div>
+        <div class="navbutton">&nbsp;</div>
+    </div>
+    <!-- END OF HEADER -->
+    <div id="content"><div class="box generalbox generalboxcontent boxaligncenter"><h1> Virtual Environments 2011 Coursework Part 2: CAVE programming </h1> <hr size="2" width="100%" />
+<p> There are two pieces of coursework for this course. Overall the two pieces of coursework are worth 30% of the mark for this course. The exam is worth 70%. </p>
+<p>This coursework is is worth 70% of the overall <strong>coursework</strong> mark. All members of the groups will receive the same mark.</p>
+<h2> Overview </h2>
+<p> Your task is to build a VE application which trains a user to perform a specific task. Your application will be marked in terms of its ability to successfully transfer the necessary knowledge to the user so that they can perform the task. Extra credit will be awarded for adding particular <i>interaction</i> to the application, and developing a method to <i>measure the success</i> of the training. </p>
+<p> You can make anything engaging with immersive computer graphics and audio. Here are some ideas: </p>
+<p> · Tying various kinds of knots </p>
+<p> · Building a flat-pack piece of IKEA furniture </p>
+<p> · Perform specific acrobatic movements </p>
+<p> · Defuse a bomb </p>
+<p> · Navigate a complicated environment </p>
+<p> · Juggle </p>
+<p> · Maths! </p> 
+<hr size="2" width="100%" />
+<p> <b>Coursework deadline is 4pm on Friday, December 9. </b></p><hr size="2" width="100%" />
+<h1> Labs </h1>
+<p> Labs are from 4-6pm on Tuesdays in MPEB 1.21. </p>
+<h2> <hr size="2" width="100%" /> </h2>
+<h2> Resources </h2>
+<p> Unity will be the primary platform used for the coursework. In previous years, we've used XVR. </p>
+<p><strong> Unity download:</strong> : <br /> <a target="_blank" href="http://unity3d.com/">www.unity3d.com</a><br /> <br />
+<strong>Unity tutorials:<br /> </strong><a target="_blank" href="http://unity3d.com/support/documentation/">http://unity3d.com/support/documentation/</a><br /> <br /> 
+<strong>Unity community help (VERY useful resource!):<br /> </strong><a target="_blank" href="http://answers.unity3d.com/index.html">http://answers.unity3d.com/index.html</a><br /> <br /> 
+<strong>Autodesk Student site (register and download 3DS Max or Maya to do your 3D modelling):<br /> </strong><a target="_blank" href="http://students.autodesk.com/">http://students.autodesk.com/</a><br /> <br /> 
+<strong>Freesound.org (free sound effects):<br /> </strong><a target="_blank" href="http://www.freesound.org/">http://www.freesound.org/</a><br /> <br /> 
+<strong>CMU motion capture database:<br /> </strong><a target="_blank" href="http://mocap.cs.cmu.edu/">http://mocap.cs.cmu.edu/</a><br /> <br />
+
+<hr size="2" width="100%" /> </h2>
+<h2> Previous XVR info (note that Unity is being used this year, so the following is just for reference)</h2>
+<strong>XVR<br /> </strong><a target="_blank" href="http://www.vrmedia.it">www.vrmedia.it</a> </p>
+<p><strong> Example XVR projects, demonstrating the basics of development: </strong></p>
+<p> Download <a href="http://www.cs.ucl.ac.uk/teaching/VE/Coursework/files/2010">here</a>. </p>
+<p><strong> The lightsabre training project from 2006 (James Tompkin and Fotios Tzellos ) has good examples of lighting, project packaging, tracker/mouse input and audio. </strong> <a href="http://www.cs.ucl.ac.uk/teaching/VE/Coursework/files/training.zip">http://www.cs.ucl.ac.uk/teaching/VE/Coursework/files/training.zip</a> </p> </div><div class="modified">Last modified: Friday, 7 October 2011, 09:26 AM</div></div><div id="footer"><p class="helplink"></p><div class="logininfo">You are logged in as <a  href="http://moodle.ucl.ac.uk/user/view.php?id=142047&amp;course=11551">Martijn van der Veen</a>  (<a  href="http://moodle.ucl.ac.uk/login/logout.php?sesskey=lxYAeE95T5">Logout</a>)</div>
+<div class="policies">
+	<a href="/policy/Policy2010.html" target="_blank">UCL Moodle usage policy and guidelines</a>
+| <a href="http://www.ucl.ac.uk/isd/staff/e-learning/tools/moodle" target="_blank">Staff help</a>
+| <a href="http://www.ucl.ac.uk/isd/students/e-learning/tools/moodle" target="_blank">Student help</a>
+</div><br>
+<!--
+<div class="contact_copyright">
+	University College London - Gower Street - London - WC1E 6BT - <img src="http://www.ucl.ac.uk/images/phone.gif" id="phone" alt="Telephone:" width="13" height="9"> +44 (0)20 7679 2000
+</div> 
+-->
+</div>
+</div>
+
+</body>
+</html>
