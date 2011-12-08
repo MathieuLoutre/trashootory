@@ -7,6 +7,7 @@ function OnTriggerEnter (other:Collider)
 	if (pellet == null && other.attachedRigidbody && other.attachedRigidbody.tag == "pickup")
 	{
 		pellet = other.attachedRigidbody;
+		other.transform.parent = null;
 		pellet.useGravity = false;
 	}
 }
