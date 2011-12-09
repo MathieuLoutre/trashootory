@@ -1,6 +1,7 @@
 var pellet : Rigidbody = null;
 var start_pos : Vector3;
 var pos_set = false;
+var lift : Elevator;
 
 function OnTriggerEnter (other:Collider) 
 {
@@ -34,6 +35,7 @@ function Update ()
 		 		pellet.AddForce((start_pos - transform.position) * 1000);
 		 		pellet = null;
 		 		pos_set = false;
+				lift.NextLevel();
 		 	}
 		 	else // set the position
 		 	{
