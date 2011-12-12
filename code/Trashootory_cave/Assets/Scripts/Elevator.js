@@ -1,6 +1,10 @@
 var ElevatorSound : AudioClip;
+//var Foo : Light;
 
 public function NextLevel() {
+	// Change the light inside of the control room
+	//TODO: Foo.light.color = Color.Red;
+	
     // Create the curve
 	var curve : AnimationCurve;
 	// curve = AnimationCurve(Keyframe(0, 21), Keyframe(3.45, 27), Keyframe(8.12, 64), Keyframe(10, 63));

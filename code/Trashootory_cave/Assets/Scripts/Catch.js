@@ -3,6 +3,7 @@ var start_pos : Vector3;
 var pos_set = false;
 var slingSound : AudioClip;
 var shotSound : AudioClip;
+var grabSound : AudioClip;
 
 function OnTriggerEnter (other:Collider) 
 {
@@ -11,6 +12,8 @@ function OnTriggerEnter (other:Collider)
 		pellet = other.attachedRigidbody;
 		other.transform.parent = null;
 		pellet.useGravity = false;
+		audio.clip = grabSound;
+		audio.Play();
 	}
 }
 
@@ -35,7 +38,8 @@ function Update ()
 		 		pellet.useGravity = true;
                 pellet.isKinematic = false;
 
-		 		pellet.AddForce((start_pos - transform.position) * (1000 * pellet.mass));
+				var diff = start_pos - transform.position;
+		 		pellet.AddForce(diff.normalized * (4000 * diff.magnitude*diff.magnitude));
 				audio.clip = shotSound;
 				var l = (start_pos - transform.position).magnitude;
 				audio.pitch = 0.7 + l/4;
