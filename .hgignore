@@ -1,0 +1,5 @@
+Library/cache/
+Library/metadata/
+Library/previews/
+.DS_Store
+Temp

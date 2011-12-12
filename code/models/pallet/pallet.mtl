@@ -1,0 +1,19 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+newmtl Material__8
+Ka  0.00 0.00 0.00
+Kd  1.00 1.00 1.00
+Ks  0.00 0.00 0.00
+d  1.00
+Ns  10.00
+illum 2
+#
+newmtl Material__7
+Ka  0.06 0.16 0.18
+Kd  0.19 0.47 0.55
+Ks  0.90 0.90 0.90
+d  1.00
+Ns  0.50
+illum 2
+#
+# EOF
