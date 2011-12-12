@@ -1,6 +1,8 @@
 var pellet : Rigidbody = null;
 var start_pos : Vector3;
 var pos_set = false;
+var slingSound : AudioClip;
+var shotSound : AudioClip;
 
 function OnTriggerEnter (other:Collider) 
 {
@@ -34,6 +36,10 @@ function Update ()
                 pellet.isKinematic = false;
 
 		 		pellet.AddForce((start_pos - transform.position) * (1000 * pellet.mass));
+				audio.clip = shotSound;
+				var l = (start_pos - transform.position).magnitude;
+				audio.pitch = 0.7 + l/4;
+				audio.Play();
 		 		pellet = null;
 		 		pos_set = false;
 		 	}
@@ -41,6 +47,8 @@ function Update ()
 		 	{
 		 		start_pos = transform.position;
 		 		pos_set = true;
+				audio.clip = slingSound;
+				audio.Play();
 		 	}
 		 }
 
