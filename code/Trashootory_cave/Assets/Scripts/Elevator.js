@@ -3,7 +3,7 @@ public function NextLevel() {
     // Create the curve
 	var curve : AnimationCurve;
 	// curve = AnimationCurve(Keyframe(0, 21), Keyframe(3.45, 27), Keyframe(8.12, 64), Keyframe(10, 63));
-	curve = AnimationCurve(Keyframe(0, transform.position.y), Keyframe(3.45, transform.position.y+6), Keyframe(8.12, transform.position.y+43), Keyframe(10, transform.position.y+42));
+	curve = AnimationCurve(Keyframe(0, transform.position.y), Keyframe(3.45, transform.position.y+6), Keyframe(8.12, transform.position.y+46), Keyframe(10, transform.position.y+45));
 	
     // Create the clip with the curve
     var clip : AnimationClip = new AnimationClip();

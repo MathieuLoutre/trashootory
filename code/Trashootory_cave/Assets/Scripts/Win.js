@@ -1,8 +1,13 @@
-function OnTriggerEnter (hit : Collider) 
+var numberOfGoalsToHit = 1;
+var numberOfTouchedGoals = 0;
+var lift : Elevator;
+
+function updateGoals()
 {
-	if (hit.attachedRigidbody && (hit.attachedRigidbody.tag == "pickup" || hit.attachedRigidbody.tag == "scene"))
+	numberOfTouchedGoals += 1;
+	
+	if (numberOfTouchedGoals == numberOfGoalsToHit)
 	{
-		yield WaitForSeconds(5.0);
-		Application.LoadLevel("Level2");
+		lift.NextLevel();
 	}
 }
