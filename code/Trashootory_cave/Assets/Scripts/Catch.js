@@ -4,6 +4,7 @@ var pos_set = false;
 var slingSound : AudioClip;
 var shotSound : AudioClip;
 var grabSound : AudioClip;
+var numberOfPellets = 18;
 
 function OnTriggerEnter (other:Collider) 
 {
@@ -12,6 +13,7 @@ function OnTriggerEnter (other:Collider)
 		pellet = other.attachedRigidbody;
 		other.transform.parent = null;
 		pellet.useGravity = false;
+		
 		audio.clip = grabSound;
 		audio.Play();
 	}
@@ -19,7 +21,6 @@ function OnTriggerEnter (other:Collider)
 
 function Update () 
 {
-	
 	if (pellet != null)
 	{
 		if (pos_set)
@@ -40,12 +41,15 @@ function Update ()
 
 				var diff = start_pos - transform.position;
 		 		pellet.AddForce(diff.normalized * (4000 * diff.magnitude*diff.magnitude));
+				
 				audio.clip = shotSound;
 				var l = (start_pos - transform.position).magnitude;
 				audio.pitch = 0.7 + l/4;
 				audio.Play();
-		 		pellet = null;
+		 		
+				pellet = null;
 		 		pos_set = false;
+				numberOfPellets -= 1;
 		 	}
 		 	else // set the position
 		 	{
@@ -78,5 +82,12 @@ function Update ()
 //				pos_set = true;
 //			}
 //		}
+	}
+	else
+	{
+		if (numberOfPellets == 0)
+		{
+			
+		}
 	}
 }
