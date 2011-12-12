@@ -1,3 +1,4 @@
+var ElevatorSound : AudioClip;
 
 public function NextLevel() {
     // Create the curve
@@ -12,5 +13,7 @@ public function NextLevel() {
     // Add and play the clip
     animation.AddClip(clip, "Elevator");
     animation.Play("Elevator");
+	audio.clip = ElevatorSound;
+	audio.Play();
 }
 @script RequireComponent(Animation)
