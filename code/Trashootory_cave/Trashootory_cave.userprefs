@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\catcher.cs">
     <Files>
-      <File FileName="Assets\Scripts\Catch.js" Line="46" Column="34" />
-      <File FileName="Assets\Scripts\catcher.cs" Line="23" Column="33" />
+      <File FileName="Assets\Scripts\Catch.js" Line="61" Column="5" />
+      <File FileName="Assets\Scripts\catcher.cs" Line="78" Column="15" />
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" Line="37" Column="50" />
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" Line="20" Column="33" />
     </Files>
