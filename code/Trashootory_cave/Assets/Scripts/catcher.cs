@@ -27,6 +27,10 @@ void OnTriggerEnter (Collider other)
 // Update is called once per frame
 void Update()
 {
+		
+	if (Input.GetKeyDown(KeyCode.F))
+		Screen.fullScreen = !Screen.fullScreen;
+		
     if (pellet != null)
     {
         if (pos_set)
