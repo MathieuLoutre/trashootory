@@ -1,9 +1,9 @@
-//using UnityEngine;
-//using System.Collections;
-//
+using UnityEngine;
+using System.Collections;
+
 //using MiddleVR_Unity3D;
-//
-//public class VRApplySharedTransform : MonoBehaviour {
+
+public class VRApplySharedTransform : MonoBehaviour {
 //    vrTracker tracker = null;
 //
 //	// Use this for initialization
@@ -32,4 +32,4 @@
 //            //MiddleVRTools.Log("Client applying data : " + p.x );
 //        }
 //	}
-//}
+}
