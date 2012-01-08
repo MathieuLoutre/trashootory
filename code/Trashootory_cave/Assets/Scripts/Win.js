@@ -10,4 +10,12 @@ function updateGoals()
 	{
 		world.NextLevel();
 	}
+
+}	
+
+// for debugging purposes: type N to go to the next level
+function Update () 
+{
+	if (Input.GetKeyDown(KeyCode.N))
+		world.NextLevel();
 }

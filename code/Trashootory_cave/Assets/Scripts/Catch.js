@@ -23,6 +23,13 @@ function Update ()
 	if (Input.GetKeyDown(KeyCode.F))
 		Screen.fullScreen = !Screen.fullScreen;
 
+	if (Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown(KeyCode.Plus))
+		transform.position.y += 0.1;
+
+	if (Input.GetKeyDown(KeyCode.KeypadMinus || Input.GetKeyDown(KeyCode.Minus)))
+		transform.position.y -= 0.1;
+
+
 	if (pellet != null)
 	{
 		if (pos_set)
