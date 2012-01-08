@@ -7,7 +7,7 @@ public function NextLevel() {
 	
     // Create the curve
 	var curve : AnimationCurve;
-	curve = AnimationCurve(Keyframe(0, transform.position.y), Keyframe(3.45, transform.position.y+6), Keyframe(8.12, transform.position.y+46), Keyframe(10, transform.position.y+45));
+	curve = AnimationCurve(Keyframe(0, transform.position.y), Keyframe(3.45, transform.position.y+6), Keyframe(8.12, transform.position.y+47), Keyframe(10, transform.position.y+46));
 	
     // Create the clip with the curve
     var clip : AnimationClip = new AnimationClip();
