@@ -46,8 +46,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Catch.js" />
      <Compile Include="Assets\Scripts\Elevator.js" />
+     <Compile Include="Assets\Scripts\Throwable.js" />
      <Compile Include="Assets\Scripts\Touch.js" />
      <Compile Include="Assets\Scripts\Win.js" />
+     <Compile Include="Assets\Scripts\World.js" />
      <Compile Include="Assets\Sounds\soundhit.js" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />

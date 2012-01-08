@@ -1,6 +1,6 @@
 var numberOfGoalsToHit = 1;
 var numberOfTouchedGoals = 0;
-var lift : Elevator;
+var world : World;
 
 function updateGoals()
 {
@@ -8,6 +8,6 @@ function updateGoals()
 	
 	if (numberOfTouchedGoals == numberOfGoalsToHit)
 	{
-		lift.NextLevel();
+		world.NextLevel();
 	}
 }

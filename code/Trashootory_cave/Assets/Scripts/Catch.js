@@ -4,7 +4,6 @@ var pos_set = false;
 var slingSound : AudioClip;
 var shotSound : AudioClip;
 var grabSound : AudioClip;
-var numberOfPellets = 18;
 
 function OnTriggerEnter (other:Collider) 
 {
@@ -52,7 +51,6 @@ function Update ()
 		 		
 				pellet = null;
 		 		pos_set = false;
-				numberOfPellets -= 1;
 		 	}
 		 	else // set the position
 		 	{
@@ -62,35 +60,5 @@ function Update ()
 				audio.Play();
 		 	}
 		 }
-
-         		
-//		vrButtons buttons = null;
-//		
-//		if (MiddleVR.VRDeviceMgr != null) {
-//		           buttons = MiddleVR.VRDeviceMgr.GetButtons("VRPNButtons0");
-//		}
-//		
-//		if (buttons != null && buttons.IsButtonPressed(0)) 
-//		{
-//			if (pos_set) // object is set in the air
-//			{
-//				pellet.useGravity = true;
-//				pellet.AddForce((start_pos - transform.position) * 1000);
-//				pellet = null;
-//				pos_set = false;
-//			}
-//			else // set the position
-//			{
-//				start_pos = transform.position;
-//				pos_set = true;
-//			}
-//		}
-	}
-	else
-	{
-		if (numberOfPellets == 0)
-		{
-			
-		}
 	}
 }
