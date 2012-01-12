@@ -7,21 +7,24 @@ public class VRManagerScript : MonoBehaviour
 {
     public string ConfigFile;
     public GameObject RootNode = null;
+    
+    public bool ShowWand = true;
+    public bool ShowFPS = true;
     public bool DisableExistingCameras = true;
     public bool GrabExistingNodes = false;
     public bool DebugNodes = false;
     public bool DebugScreens = false;
     public bool QuitOnEsc = true;
 
-    private bool isInit = false;
+    [HideInInspector] public bool isInit = false;
     private bool isGeometrySet = false;
 
     private bool DisplayLog = false;
 
     private GUIText m_GUI = null;
+    private GameObject m_Wand = null;
 
-    private vrKernel             kernel = null;
-    //private vrDeviceManager   deviceMgr = null;
+    public  vrKernel             kernel = null;
     private vrDisplayManager displayMgr = null;
 
 
@@ -30,6 +33,8 @@ public class VRManagerScript : MonoBehaviour
         MiddleVRTools.Log(3,"[ ] Dumping VRManager's options:");
         MiddleVRTools.Log(3,"[ ] - ConfigFile : " + ConfigFile);
         MiddleVRTools.Log(3,"[ ] - RootNode : " + RootNode);
+        MiddleVRTools.Log(3,"[ ] - ShowWand : " + ShowWand);
+        MiddleVRTools.Log(3,"[ ] - ShowFPS  : " + ShowFPS);
         MiddleVRTools.Log(3,"[ ] - DisableExistingCameras : " + DisableExistingCameras );
         MiddleVRTools.Log(3,"[ ] - GrabExistingNodes : " + GrabExistingNodes );
         MiddleVRTools.Log(3,"[ ] - DebugNodes : " + DebugNodes );
@@ -58,30 +63,27 @@ public class VRManagerScript : MonoBehaviour
             m_GUI.anchor = TextAnchor.LowerCenter;
         }
 
-        if( ConfigFile.Length > 0 )
-            isInit = MiddleVRTools.VRInitialize(ConfigFile);
+        isInit = MiddleVRTools.VRInitialize(ConfigFile);
 
         DumpOptions();
 
-        // XXX LOG FAQ if MVR !in Path or just restart Unity?
-
-        //string txt = MiddleVR.VRKernel.GetLogString(true);
-        //Debug.Log(txt);
-
-        /*
-        if (DisplayLog)
-        {
-            m_GUI.text = txt;
-        }*/
+        kernel = MiddleVR.VRKernel;
+        displayMgr = MiddleVR.VRDisplayMgr;
 
         if (!isInit)
+        {
+            GameObject gui = new GameObject();
+            m_GUI = gui.AddComponent("GUIText") as GUIText;
+            gui.transform.localPosition = new UnityEngine.Vector3(0.5f, 0.0f, 0.0f);
+            m_GUI.pixelOffset = new UnityEngine.Vector2(0, 0);
+            m_GUI.anchor = TextAnchor.LowerLeft;
+
+            string txt = kernel.GetLogString(true);
+            print(txt);
+            m_GUI.text = txt;
+
             return;
-
-        kernel     = MiddleVR.VRKernel;
-        displayMgr = MiddleVR.VRDisplayMgr;
-        //deviceMgr  = MiddleVR.VRDeviceMgr;
-
-        //uint nbDevices = deviceMgr.GetDevicesNb();
+        }
 
         if (DisableExistingCameras)
         {
@@ -104,16 +106,49 @@ public class VRManagerScript : MonoBehaviour
         MiddleVRTools.Log(4,"[>] VR Manager Start.");
         InitializeVR();
         MiddleVRTools.Log(4, "[<] End of VR Manager Start.");
+
+        m_Wand = GameObject.Find("VRWand");
+
+        if (ShowFPS)
+        {
+            guiText.enabled = true;
+        }
+        else
+        {
+            guiText.enabled = false;
+        }
+
+        if (ShowWand)
+        {
+            EnableWand(true);
+        }
+        else
+        {
+            EnableWand(false);
+        }
 	}
+
+    void EnableWand(bool iState)
+    {
+        if( m_Wand != null )
+        {
+            m_Wand.SetActiveRecursively(iState);
+        }
+        else
+        {
+            print("!W");
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
         //MiddleVRTools.Log("VRManagerUpdate");
-        MiddleVRTools.Log(4, "[>] Unity Update - Start");
-            
-	    if( isInit )
+
+        if (isInit)
         {
-            if( kernel.GetFrame() >= 1 && !isGeometrySet && !Application.isEditor)
+            MiddleVRTools.Log(4, "[>] Unity Update - Start");
+
+            if (kernel.GetFrame() >= 1 && !isGeometrySet && !Application.isEditor)
             {
                 displayMgr.SetWindowGeometry();
                 isGeometrySet = true;
@@ -129,8 +164,26 @@ public class VRManagerScript : MonoBehaviour
                 print(txt);
                 m_GUI.text = txt;
             }
-        }
 
-        MiddleVRTools.Log(4, "[<] Unity Update - End");
+            vrKeyboard keyb = MiddleVR.VRDeviceMgr.GetKeyboard();
+
+            if (keyb.IsKeyToggled(MiddleVR.VRK_F) && (keyb.IsKeyPressed(MiddleVR.VRK_LSHIFT) || keyb.IsKeyPressed(MiddleVR.VRK_RSHIFT)))
+            {
+                ShowFPS = !ShowFPS;
+                guiText.enabled = ShowFPS;
+            }
+
+            if ((keyb.IsKeyToggled(MiddleVR.VRK_W) || keyb.IsKeyToggled(MiddleVR.VRK_Z)) && (keyb.IsKeyPressed(MiddleVR.VRK_LSHIFT) || keyb.IsKeyPressed(MiddleVR.VRK_RSHIFT)))
+            {
+                ShowWand = !ShowWand;
+                EnableWand(ShowWand);
+            }
+
+            MiddleVRTools.Log(4, "[<] Unity Update - End");
+        }
+        else
+        {
+            //Debug.LogWarning("[ ] If you have an error mentionning 'DLLNotFoundException: MiddleVR_CSharp', please restart Unity. If this does not fix the problem, please make sure MiddleVR is in the PATH environment variable.");
+        }
 	}
 }
