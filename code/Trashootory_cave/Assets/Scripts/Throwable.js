@@ -5,7 +5,7 @@ function Update()
 {
 	if (thrown == false)
 	{
-		if (transform.rigidbody.isKinematic == false)
+		if (transform.gameObject.tag == "shot")
 		{
 			thrown = true;
 			world.PelletThrown();

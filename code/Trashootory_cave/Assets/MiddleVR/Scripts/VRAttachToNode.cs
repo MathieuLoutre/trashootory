@@ -6,6 +6,8 @@ public class VRAttachToNode  : MonoBehaviour {
     public string VRNode;
     bool attached = false;
 
+    private bool m_Searched = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -26,13 +28,17 @@ public class VRAttachToNode  : MonoBehaviour {
             {
                 transform.parent = node.transform;
                 transform.localPosition = new Vector3(0, 0, 0);
-                //transform.localRotation = new Quaternion(0, 0, 0, 1);
+                transform.localRotation = new Quaternion(0, 0, 0, 1);
                 MiddleVRTools.Log( 2, "[+] AttachToNode: " + this.name + " attached to : " + node.name );
                 attached = true;
             }
             else
             {
-                MiddleVRTools.Log( 0, "[X] AttachToNode: Failed to find Game object '" + VRNode + "'" );
+                if (m_Searched == false)
+                {
+                    MiddleVRTools.Log(0, "[X] AttachToNode: Failed to find Game object '" + VRNode + "'");
+                    m_Searched = true;
+                }
             }
         }
 	}

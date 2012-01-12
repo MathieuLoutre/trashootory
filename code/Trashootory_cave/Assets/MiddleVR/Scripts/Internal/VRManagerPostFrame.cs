@@ -12,6 +12,13 @@ public class VRManagerPostFrame : MonoBehaviour {
     {
         yield return new WaitForEndOfFrame();
 
+        VRManagerScript mgr = GetComponent<VRManagerScript>();
+        if (mgr != null && !mgr.isInit && mgr.kernel == null )
+        {
+            Debug.LogWarning("[ ] If you have an error mentionning 'DLLNotFoundException: MiddleVR_CSharp', please restart Unity. If this does not fix the problem, please make sure MiddleVR is in the PATH environment variable.");
+            mgr.guiText.text = "[ ] Check the console window to check if you have an error mentionning 'DLLNotFoundException: MiddleVR_CSharp', please restart Unity. If this does not fix the problem, please make sure MiddleVR is in the PATH environment variable.";
+        }
+
         MiddleVRTools.Log(4, "[>] VR End of Frame.");
         
         if( kernel == null )
@@ -19,12 +26,7 @@ public class VRManagerPostFrame : MonoBehaviour {
             kernel = MiddleVR.VRKernel;
         }
 
-        if (kernel != null)
-        {
-            kernel.PostFrameUpdate();
-        }
-
-        if( dmgr == null )
+        if (dmgr == null)
         {
             dmgr = MiddleVR.VRDeviceMgr;
         }
@@ -36,14 +38,16 @@ public class VRManagerPostFrame : MonoBehaviour {
             {
                 VRManagerScript vrmgr = GetComponent<VRManagerScript>();
 
-                if( vrmgr != null && vrmgr.QuitOnEsc && keyb.IsKeyToggled((uint)MiddleVR.VRK_ESCAPE))
+                if (vrmgr != null && vrmgr.QuitOnEsc && keyb.IsKeyPressed((uint)MiddleVR.VRK_ESCAPE))
                 {
                     if (Application.isEditor)
                     {
-						MiddleVRTools.Log("If we were in player mode, MiddleVR would exit.");
+                        MiddleVRTools.Log("[ ] If we were in player mode, MiddleVR would exit.");
                     }
                     else
                     {
+                        MiddleVRTools.Log("[ ] Unity says we're quitting.");
+                        MiddleVR.VRKernel.SetQuitting();
                         Application.Quit();
                     }
 
@@ -51,15 +55,18 @@ public class VRManagerPostFrame : MonoBehaviour {
             }
             else
             {
-                if( !LoggedNoKeyboard)
+                if (!LoggedNoKeyboard)
                 {
                     MiddleVRTools.Log("[X] No VR keyboard");
                     LoggedNoKeyboard = true;
                 }
-                
             }
         }
 
+        if (kernel != null)
+        {
+            kernel.PostFrameUpdate();
+        }
 
         MiddleVRTools.Log(4, "[<] End of VR End of Frame.");
 

@@ -45,7 +45,7 @@ public class catcher : MonoBehaviour
 
 	        if (MiddleVR.VRDeviceMgr != null)
 	        {
-	            buttons = MiddleVR.VRDeviceMgr.GetButtons("VRPNButtons0");
+	            buttons = MiddleVR.VRDeviceMgr.GetButtons("VRPNButtons0.Buttons");
 	        }
 
 	        if (buttons != null && buttons.IsToggled(0))
@@ -62,6 +62,8 @@ public class catcher : MonoBehaviour
 	                float l = (start_pos - transform.position).magnitude;
 	                audio.pitch = 0.7f + l / 4.0f;
 	                audio.Play();
+
+                    pellet.gameObject.tag = "shot";
 
 	                pellet = null;
 	                pos_set = false;
