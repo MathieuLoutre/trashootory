@@ -39,7 +39,7 @@ simulations, we will start off with the storyline of the game (section \ref{sec:
 followed by a more formal overview of the aim of the game in general and the aim of the
 individual levels in particular (section \ref{sec:aim}). We will then lay out some
 interesting elements in the specific approach (section \ref{sec:elements}), and end with
-implementation details we think are noteworthy (section \ref{sec:inner}.
+implementation details we think are noteworthy (section \ref{sec:inner}).
 % TODO: add conclusion? in that case, add one line here.
 
 
@@ -174,8 +174,11 @@ The elevator fell more or less in this category but had two advantages over the
 others. Firstly, the only movement occurs when the user doesn't interact with the
 environment, and is only in the vertical direction (which humans are less used to).
 Secondly, the sound of a lift is easily identifiable and can make you feel as if
-you are moving relatively easy, which is even more convincing with use of the 
-wide-view visual feedback provided by the open windows. 
+you are moving relatively easy, furthermore we synchronised it with the elevator's
+animation providing a greater immersive feeling. This is even more convincing with use of the 
+wide-view visual feedback provided by the open windows. We also decided to make the ceiling
+visible from the user in order to ensure that he feels inside the elevator and to avoid him 
+trying to look above (since there is no screen).
 
 You hear the sound and see everything around you move: it is just like you are taking
 an elevator ride, with the CAVE being the elevator.
@@ -183,12 +186,14 @@ an elevator ride, with the CAVE being the elevator.
 \subsection{Atmosphere}
 The atmosphere of the game is slightly dark and can put you ill at ease at some
 point. This was done partly to cope with the fact that you could not feel the objects
-in your hand while throwing it and that you somehow use “the force” to throw them,
+in your hand while throwing it and that you somehow use ‚Äúthe force‚Äù to throw them,
 and to distract you from the impression that you should been familiarly with all the
 aspect in this environment.
 
 It is supposed to put you in a slightly recognisable place with familiar physics and
-objects, but hint you at (and justify) your unusual and ``magical'' capabilities
+objects, but hint you at (and justify) your unusual and ``magical'' capabilities. The wand
+controller has a physical power to lift objects without any effort and the unusual particle effect attached to
+it is here to reinforce this feeling.
 
 
 % Implementation
