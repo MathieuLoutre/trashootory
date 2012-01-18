@@ -1,10 +1,12 @@
 \documentclass[a4paper]{article}
 \usepackage[margin=3cm]{geometry}
 
+\usepackage{graphicx}
+
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{0.2cm}
 
-\title{Trashootory\footnote{The name of the game is a hodgepodge of Trajectory, Shooting and Factory.} \\ An exploration of human's innate sense of physics}
+\title{Trashootory\footnote{The name of the game is a hodgepodge of Trajectory, Shooting and Factory.} \\ An Exploration of Human's Innate Sense of Physics}
 \author{Mathieu Triay \\ Cl\'ement Godard \\ Martijn van der Veen \\ Moos
 Hueting}
 
@@ -39,12 +41,12 @@ simulations, we will start off with the storyline of the game (section \ref{sec:
 followed by a more formal overview of the aim of the game in general and the aim of the
 individual levels in particular (section \ref{sec:aim}). We will then lay out some
 interesting elements in the specific approach (section \ref{sec:elements}), and end with
-implementation details we think are noteworthy (section \ref{sec:inner}).
+implementation details we think are noteworthy (section \ref{sec:inner}). As a conclusion, we'll discuss our journey with the CAVE and the improvements we had in mind for the game (section \ref{sec:discuss}).
 % TODO: add conclusion? in that case, add one line here.
 
 
 % Storyline, general approach
-\section{The story of the game}
+\section{The Story of the Game}
 \label{sec:story}
 You are subject to an experiment lead by university students which has the goal to, as they claim, 
 ``learn more about people's abilities to put in practice their innate sense of
@@ -83,7 +85,7 @@ should quickly go back to your normal life.
 
 
 % Aims
-\section{The aim of the game}
+\section{The Aim of the Game}
 \label{sec:aim}
 
 By using natural moving and a one-to-one mapping of real movements and events in
@@ -154,7 +156,7 @@ previous levels and should be considered as a sort of final examination telling
 you if you managed to master your innate understanding of physics or not.
 
 
-\section{Interesting elements}
+\section{Interesting Elements}
 \label{sec:elements}
 We will now discuss some less obvious, but interesting elements in the game.
 
@@ -176,7 +178,9 @@ environment, and is only in the vertical direction (which humans are less used t
 Secondly, the sound of a lift is easily identifiable and can make you feel as if
 you are moving relatively easy, furthermore we synchronised it with the elevator's
 animation providing a greater immersive feeling. This is even more convincing with use of the 
-wide-view visual feedback provided by the open windows. We also decided to make the ceiling
+wide-view visual feedback provided by the open windows. 
+
+We also decided to make the ceiling
 visible from the user in order to ensure that he feels inside the elevator and to avoid him 
 trying to look above (since there is no screen).
 
@@ -186,31 +190,31 @@ an elevator ride, with the CAVE being the elevator.
 \subsection{Atmosphere}
 The atmosphere of the game is slightly dark and can put you ill at ease at some
 point. This was done partly to cope with the fact that you could not feel the objects
-in your hand while throwing it and that you somehow use ‚Äúthe force‚Äù to throw them,
+in your hand while throwing it and that you somehow use ``the force'' to throw them,
 and to distract you from the impression that you should been familiarly with all the
-aspect in this environment.
-
+aspect in this environment.\\
 It is supposed to put you in a slightly recognisable place with familiar physics and
 objects, but hint you at (and justify) your unusual and ``magical'' capabilities. The wand
 controller has a physical power to lift objects without any effort and the unusual particle effect attached to
-it is here to reinforce this feeling.
+it is here to reinforce this feeling. Finally we added a light inside the hand controler
+providing dynamic lighting following the movements of the hand to make the particle effect more realistic.
 
 
 % Implementation
-\section{Implementation details}
+\section{Implementation Details}
 \label{sec:inner}
 For the game it was important that the trajectory and force of the launched objects was
 more or less realistic, or at least with an equation which was sensible enough
 to show quite major differences with not so major changes in hand position.
 
-We have chosen to use a quadratic function for the speed, depeding on the length
-of the difference between the two clicks (times a constant that experimentically
+We have chosen to use a quadratic function for the speed, depending on the length
+of the difference between the two clicks (times a constant that experimentally
 turned out to be realistic). According to some sources
 \footnote{http://www.wired.com/wiredscience/2010/10/physics-of-angry-birds/},
 a quadratic function comes close to the actual physics behind a slingshot, which
 has been the inspiration for the throwing/shooting interaction since most people
 will be familiar with a slingshot. Our own trial and error have showed this quadratic
-function to be reasonable realistic, apart from the fact that we don't also get
+function to be reasonably realistic, apart from the fact that we don't also get
 quadratic back pressure feedback while aiming.
 
 Whilst programming the game we had to tweak Unity to do what we wanted it to do,
@@ -264,17 +268,80 @@ checks if the state of the object is thrown or not. In this case, we set the
 \verb!World! script as a variable of the \verb!Thrown! to keep track of them
 globally. This way, we can also move the lift to the last level without problems.
 
-\subsection{Visual impressions}
+\section{Conclusion \& Discussion}
+\label{sec:discuss}
+% TODO: write (very) short conclusion
+%       (overal experience, things we didn't do but wanted to do)
+In this project we have come up with a game in which the innate sense of physics
+of people can be tested. Using multiple levels, each exploring a different aspect
+of physics, the user is subjected to new situations in which haptic feedback is
+not present. As such, the user learns the weights of the thrown objects and behaviour of the 
+system by trial and error.
+
+We have found by our own experience that through time one gets better at completing the levels.
+A full user study to test the improvement over time would be a next step in the process.
+From this user study we could also extrapolate the hardest part of the levels and see if
+some of them are possibly too hard to hold the attention of the user.
+
+Another improvement we have in mind is using the Kinect instead of the wand, to make the handling
+of objects more natural. We envision a system where one hand holds the object and the other hand
+acts as the force vector.
+
+At the moment there is no haptic feedback at all. Some form of sense of touch would greatly increase
+the power of the illusion. A study where we compare learning time between the system with and without
+haptic feedback could yield interesting results.
+
+Last but not least, the experience with working with the CAVE, although very exciting, has not always been a pleasant one.
+A more robust system for working between the CAVE and our own personal computers would have
+significantly improved our efficiency and would possibly have resulted in the inclusion of one or more of the above points.
+
+\section{Game Visuals}
 
 % TODO: add some nice screenshots and maybe photos of interaction in cave
 
 %% image:
-%\begin{figure}[ht]
-% \centering
-% \includegraphics[width=1.0\textwidth]{img/}
-% \caption{}
-% \label{fig:}
-%\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.0\textwidth]{level1-1.png}
+	\caption{Level 1 - View from the level}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.0\textwidth]{level1-2.png}
+	\caption{Level 1 - View from the elevator}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.0\textwidth]{level1-3.png}
+	\caption{Level 1 - View with a box in the air}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.0\textwidth]{level2.png}
+	\caption{Level 2}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.0\textwidth]{level3.png}
+	\caption{Level 3}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.0\textwidth]{level4.png}
+	\caption{Level 4}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.0\textwidth]{end.png}
+	\caption{The End}
+\end{figure}
 
 %% multi images:
 %\begin{figure}[ht]
@@ -290,13 +357,6 @@ globally. This way, we can also move the lift to the last level without problems
 % \caption{}
 % \label{fig:}
 %\end{figure}
-
-
-\section{Conclusion}
-% TODO: write (very) short conclusion
-%       (overal experience, things we didn't do but wanted to do)
-
-
 
 
 % TODO: now drink some beer
